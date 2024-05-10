@@ -1,17 +1,19 @@
-import Filter from "@/components/Filter";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ListNews from "@/components/ListNews";
-import Pagination from "@/components/Pagination";
+import { getHealinesNews } from "@/helpers/apis";
 
-export default function Home() {
+export default async function Home() {
+
+  try {
+    const res = await getHealinesNews()
+    const data =await  res.data
+    console.log(data)
+    
+  } catch (error) {
+    console.log(error.message)
+  }
+
   return (
-    <div className="max-w-7xl mx-auto">
-      <Header/>
-      <Filter/>
-      <ListNews/>
-      <Pagination/>
-      <Footer/>
+    <div>
+      
     </div>
   );
 }
