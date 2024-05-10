@@ -23,14 +23,14 @@ export default function Navbar() {
     <nav>
       <NavbarItem categories={categories} />
       <div
-        className="text-2xl text-slate-700 font-bold inline md:hidden "
+        className="text-2xl text-slate-700 font-bold inline md:hidden cursor-pointer"
         onClick={() => setOpenNav(!openNav)}
       >
         {openNav ? <IoMdClose /> : <CiMenuBurger />}
       </div>
       {/* Mobile Navbar */}
       {openNav && (
-        <div className="sm:hidden flex flex-col text-sm uppercase absolute top-20 w-screen left-0 text-center py-4 pe-2  bg-slate-400 z-20">
+        <div className="md:hidden flex flex-col text-sm uppercase absolute top-[70px] w-full left-0 text-center py-4 pe-2 bg-slate-400 z-20">
           {categories.map((category) => (
             <Link
               className="text-white hover:bg-slate-500 transition duration-300 h-full w-full p-3"
